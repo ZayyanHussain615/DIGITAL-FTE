@@ -1,0 +1,27 @@
+{
+  "watchers": {
+    "filesystem": {
+      "enabled": true,
+      "watch_folder": "Inbox",
+      "check_interval": 10,
+      "recursive": false,
+      "file_patterns": ["*.txt", "*.md", "*.pdf", "*.doc", "*.docx"]
+    },
+    "gmail": {
+      "enabled": false,
+      "check_interval": 300,
+      "lookback_hours": 24,
+      "label_prefix": "[TASK]"
+    },
+    "whatsapp": {
+      "enabled": false,
+      "check_interval": 60,
+      "headless": false,
+      "contacts_filter": []
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "log_dir": "Logs"
+  }
+}

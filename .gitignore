@@ -1,0 +1,72 @@
+# Secure Vault Gitignore - Security Rule #2
+# NEVER sync sensitive credentials, tokens, or sessions
+
+# --- Credentials & Secrets ---
+*.env
+*.env.*
+secrets/
+**/secrets/**
+**/credentials/**
+**/*.key
+**/*.pem
+**/*.token
+**/*.auth
+**/*.secret
+notepad.env
+mcp.env.template
+
+# --- Session & Persistent Data ---
+**/sessions/**
+**/*.session
+**/whatsapp_session/**
+**/whatsapp_web_data/**
+**/browser_profile/**
+**/cookies.json
+**/.qwen/session/
+**/.claude/session/
+
+# --- Temporary & Build Artifacts ---
+__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+.Python
+env/
+venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.pytest_cache/
+.mypy_cache/
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Allowed Files (Sync ONLY) ---
+# Security Rule #1: Sync ONLY .md, .json, and state files
+# We ignore everything by default and only allow specific extensions
+/*
+!/**/*.md
+!/**/*.json
+!/**/state.json
+!/.gitignore
+!/README.md
+!/requirements.txt
+!/Business_Goals.md
+!/Bank_Transactions.md
+!/Company_Handbook.md
+!/Dashboard.md
+
+# Re-ignore sensitive files that might match the allowed patterns above
+**/*.env.json
+**/banking_creds/*.json
+**/tokens/*.json
+**/secrets/*.json
